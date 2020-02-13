@@ -1,14 +1,31 @@
 <?php
 
-use Symfony\Component\VarDumper\VarDumper;
+/*
+ * This file is part of VarDumper CLI to HTML.
+ *
+ * Copyright Adamo Aerendir Crespi 2020.
+ *
+ * @author    Adamo Aerendir Crespi <hello@aerendir.me>
+ * @copyright Copyright (C) 2020 Aerendir. All rights reserved.
+ * @license   MIT
+ */
 
-if (!function_exists('dump_to_html')) {
-    function dump_to_html($file, ...$moreVars)
+use SerendipityHQ\Component\VarDumperCliToHtml\VarDumperCliToHtml;
+
+if ( ! function_exists('dumpf')) {
+    /**
+     * @param array<string,array|string>|string $options
+     * @param mixed                             $var
+     * @param mixed                             ...$moreVars
+     *
+     * @return mixed
+     */
+    function dumpf($options, $var, ...$moreVars)
     {
-        VarDumper::dump($var);
+        VarDumperCliToHtml::dump($options, $var);
 
         foreach ($moreVars as $v) {
-            VarDumper::dump($v);
+            VarDumperCliToHtml::dump($options, $v);
         }
 
         if (1 < func_num_args()) {
@@ -19,18 +36,15 @@ if (!function_exists('dump_to_html')) {
     }
 }
 
-if (!function_exists('dd_to_html')) {
-    function dd_to_html($file, ...$vars)
+if ( ! function_exists('ddf')) {
+    /**
+     * @param array<string,array|string>|string $options
+     * @param mixed                             ...$vars
+     */
+    function ddf($options, ...$vars): void
     {
-        $output = fopen('1_factory_method_nothing_annotated.html', 'r+b');
-        $cloner = new VarCloner();
-        $dumper = new HtmlDumper();
-        foreach ($vars as $v) {
-            $dumper->dump($cloner->cloneVar($var), $output, [
-                // 1 and 160 are the default values for these options
-                'maxDepth' => 5,
-                'maxStringLength' => 160
-            ]);
+        foreach ($vars as $var) {
+            VarDumperCliToHtml::dump($options, $var);
         }
 
         die(1);
