@@ -37,8 +37,9 @@ class VarDumperCliToHtml
         $dumper        = new HtmlDumper();
 
         if (null === $output) {
+            $now = new \DateTime();
             /** @psalm-suppress InvalidOperand */
-            $file = random_int(0, mt_getrandmax()) . '.html';
+            $file = $now->format('Y-m-d\TH-i-s-u') . '_' . random_int(0, mt_getrandmax()) . '.html';
             if (is_string($options)) {
                 $file    = rtrim($options, '.html') . '.html';
                 $options = [];
