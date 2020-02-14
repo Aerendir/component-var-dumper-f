@@ -33,12 +33,12 @@ jobs:
               env:
                   SYMFONY_DEPRECATIONS_HELPER: weak_vendors
 
-            - name: Change paths in clover.xml
-              run: |
-                  sed -i 's+/home/runner/work/PHPValueObjects/PHPValueObjects+/github/workspace+g' ./build/logs/clover.xml
-
-            - name: Sonarcloud
-              uses: sonarsource/sonarcloud-github-action@master
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#            - name: Change paths in clover.xml
+#              run: |
+#                  sed -i 's+/home/runner/work/PHPValueObjects/PHPValueObjects+/github/workspace+g' ./build/logs/clover.xml
+#
+#            - name: Sonarcloud
+#              uses: sonarsource/sonarcloud-github-action@master
+#              env:
+#                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
