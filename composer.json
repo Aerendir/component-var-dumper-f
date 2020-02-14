@@ -17,7 +17,7 @@
     },
     "require-dev": {
         "drenso/phan-extensions": "2.5.0",
-        "friendsofphp/php-cs-fixer": "2.16",
+        "friendsofphp/php-cs-fixer": "2.16.1",
         "phan/phan": "2.4.6",
         "phpmetrics/phpmetrics": "^2.5",
         "phpstan/phpstan": "^0.12",
