@@ -23,8 +23,8 @@ use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 class VarDumperCliToHtml
 {
     /**
-     * @param array<string,array|string>|string $options
-     * @param mixed                             $var
+     * @param array<string, array|string>|string $options
+     * @param mixed                              $var
      */
     public static function dump($options, $var): void
     {
