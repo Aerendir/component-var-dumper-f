@@ -14,9 +14,9 @@ use SerendipityHQ\Component\VarDumperCliToHtml\VarDumperCliToHtml;
 
 if ( ! function_exists('dumpf')) {
     /**
-     * @param array<string,array|string>|string $options
-     * @param mixed                             $var
-     * @param mixed                             ...$moreVars
+     * @param array<string, array|string>|string $options
+     * @param mixed                              $var
+     * @param mixed                              ...$moreVars
      *
      * @return mixed
      */
@@ -38,8 +38,8 @@ if ( ! function_exists('dumpf')) {
 
 if ( ! function_exists('ddf')) {
     /**
-     * @param array<string,array|string>|string $options
-     * @param mixed                             ...$vars
+     * @param array<string, array|string>|string $options
+     * @param mixed                              ...$vars
      */
     function ddf($options, ...$vars): void
     {
