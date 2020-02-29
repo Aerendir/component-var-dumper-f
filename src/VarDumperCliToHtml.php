@@ -23,10 +23,9 @@ use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 class VarDumperCliToHtml
 {
     /**
-     * @param array<string, array|string>|string $options
-     * @param mixed                              $var
+     * @param mixed $var
      */
-    public static function dump($options, $var): void
+    public static function dump($var): void
     {
         if (false === \in_array(\PHP_SAPI, ['cli', 'phpdbg'])) {
             throw new \LogicException('You can use DumperCliToHtml only from the command line.');
@@ -39,34 +38,14 @@ class VarDumperCliToHtml
         if (null === $output) {
             $now = new \DateTime();
             /** @psalm-suppress InvalidOperand */
-            $file = $now->format('Y-m-d\TH-i-s-u') . '_' . random_int(0, mt_getrandmax()) . '.html';
-            if (is_string($options)) {
-                $file    = rtrim($options, '.html') . '.html';
-                $options = [];
-            }
-
-            if (is_array($options) && isset($options['file'])) {
-                $file = $options['file'];
-
-                if (false === is_string($file)) {
-                    throw new \InvalidArgumentException('The "file" passed with $options must be a file path as a string.');
-                }
-
-                $file = rtrim($file, '.html') . '.html';
-                unset($options['file']);
-            }
-
+            $file   = $now->format('Y-m-d\TH-i-s-u') . '_' . random_int(0, mt_getrandmax()) . '.html';
             $output = fopen($file, 'a+b');
-        }
-
-        if (false === is_array($options)) {
-            $options = [];
         }
 
         if (false === is_resource($output)) {
             throw new \RuntimeException('Something went wrong creating the dump file.');
         }
 
-        $dumper->dump($cloner->cloneVar($var), $output, $options);
+        $dumper->dump($cloner->cloneVar($var), $output, []);
     }
 }

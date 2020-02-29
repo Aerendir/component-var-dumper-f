@@ -14,18 +14,17 @@ use SerendipityHQ\Component\VarDumperCliToHtml\VarDumperCliToHtml;
 
 if ( ! function_exists('dumpf')) {
     /**
-     * @param array<string, array|string>|string $options
-     * @param mixed                              $var
-     * @param mixed                              ...$moreVars
+     * @param mixed $var
+     * @param mixed ...$moreVars
      *
      * @return mixed
      */
-    function dumpf($options, $var, ...$moreVars)
+    function dumpf($var, ...$moreVars)
     {
-        VarDumperCliToHtml::dump($options, $var);
+        VarDumperCliToHtml::dump($var);
 
         foreach ($moreVars as $v) {
-            VarDumperCliToHtml::dump($options, $v);
+            VarDumperCliToHtml::dump($v);
         }
 
         if (1 < func_num_args()) {
@@ -38,13 +37,12 @@ if ( ! function_exists('dumpf')) {
 
 if ( ! function_exists('ddf')) {
     /**
-     * @param array<string, array|string>|string $options
-     * @param mixed                              ...$vars
+     * @param mixed ...$vars
      */
-    function ddf($options, ...$vars): void
+    function ddf(...$vars): void
     {
         foreach ($vars as $var) {
-            VarDumperCliToHtml::dump($options, $var);
+            VarDumperCliToHtml::dump($var);
         }
 
         die(1);
