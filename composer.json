@@ -16,7 +16,7 @@
         "symfony/var-dumper": "^4||^5"
     },
     "require-dev": {
-        "drenso/phan-extensions": "2.5.0",
+        "drenso/phan-extensions": "3.0.0",
         "friendsofphp/php-cs-fixer": "2.16.2",
         "phan/phan": "^2.4.6",
         "phpmetrics/phpmetrics": "^2.5",
