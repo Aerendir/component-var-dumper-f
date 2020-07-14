@@ -1,6 +1,6 @@
-vendor
 composer.lock
-.php_cs.cache
-.phpunit.result.cache
-var
 build
+var
+!var/cache/.gitkeep
+vendor
+/vendor-bin/**/vendor
