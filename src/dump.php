@@ -10,7 +10,7 @@
  * @license   MIT
  */
 
-use SerendipityHQ\Component\VarDumperCliToHtml\VarDumperCliToHtml;
+use SerendipityHQ\Component\VarDumperCliToHtml\VarDumperF;
 
 if ( ! function_exists('dumpf')) {
     /**
@@ -21,10 +21,10 @@ if ( ! function_exists('dumpf')) {
      */
     function dumpf($var, ...$moreVars)
     {
-        VarDumperCliToHtml::dump($var);
+        VarDumperF::dump($var);
 
         foreach ($moreVars as $v) {
-            VarDumperCliToHtml::dump($v);
+            VarDumperF::dump($v);
         }
 
         if (1 < func_num_args()) {
@@ -42,7 +42,7 @@ if ( ! function_exists('ddf')) {
     function ddf(...$vars): void
     {
         foreach ($vars as $var) {
-            VarDumperCliToHtml::dump($var);
+            VarDumperF::dump($var);
         }
 
         die(1);

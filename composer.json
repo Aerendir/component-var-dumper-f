@@ -1,10 +1,10 @@
 {
-    "name": "serendipity_hq/vardumper-cli-to-html",
+    "name": "serendipity_hq/component-var-dumper-f",
     "description": "Adds functions dumpf() and ddf() to Symfony's VarDumper component to be used in CLI scripts to dump to a file.",
     "type": "library",
     "license": "MIT",
     "keywords": ["dump", "debug"],
-    "homepage": "https://github.com/Aerendir/vardumper-cli-to-html",
+    "homepage": "https://github.com/Aerendir/component-var-dumper-f",
     "authors": [
         {
             "name": "Adamo Aerendir Crespi",
@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": "^7.2",
-        "symfony/var-dumper": "^4||^5"
+        "symfony/var-dumper": "^3.4|^4.4||^5.2"
     },
     "require-dev": {
         "drenso/phan-extensions": "2.5.0",

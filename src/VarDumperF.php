@@ -20,7 +20,7 @@ use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 /**
  * Creates the output in which the dump is then saved.
  */
-class VarDumperCliToHtml
+class VarDumperF
 {
     /**
      * @param mixed $var
