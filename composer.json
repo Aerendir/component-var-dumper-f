@@ -5,6 +5,10 @@
     "license": "MIT",
     "keywords": ["dump", "debug"],
     "homepage": "https://github.com/Aerendir/component-var-dumper-f",
+    "support": {
+        "docs": "https://github.com/Aerendir/component-var-dumper-f/tree/dev/docs",
+        "issues": "https://github.com/Aerendir/component-var-dumper-f/issues"
+    },
     "authors": [
         {
             "name": "Adamo Aerendir Crespi",
