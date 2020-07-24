@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<h1 align="center">Serendipity HQ Array Writer</h1>
+<h1 align="center">Serendipity HQ VarDumper F</h1>
 <p align="center">Adds functions `dumpf()` and `ddf()` to [Symfony's VarDumper component](https://symfony.com/doc/current/components/var_dumper.html) that write the dump to a file.</p>
 <p align="center">
     <a href="https://github.com/Aerendir/component-var-dumper-f/releases"><img src="https://img.shields.io/packagist/v/serendipity_hq/component-var-dumper-f.svg?style=flat-square"></a>
@@ -35,7 +35,7 @@
 
 <hr />
 <h3 align="center">
-    <b>Do you like this bundle?</b><br />
+    <b>Do you like this library?</b><br />
     <b><a href="#js-repo-pjax-container">LEAVE A &#9733;</a></b>
 </h3>
 <p align="center">
@@ -120,7 +120,7 @@ To get a fresh dump, simply remove the dumped files.
 
 <hr />
 <h3 align="center">
-    <b>Do you like this bundle?</b><br />
+    <b>Do you like this library?</b><br />
     <b><a href="#js-repo-pjax-container">LEAVE A &#9733;</a></b>
 </h3>
 <p align="center">
