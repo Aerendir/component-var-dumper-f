@@ -20,7 +20,7 @@ use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 /**
  * Creates the output in which the dump is then saved.
  */
-class VarDumperF
+final class VarDumperF
 {
     /**
      * @param mixed $var
@@ -38,11 +38,11 @@ class VarDumperF
         if (null === $output) {
             $now = new \DateTime();
             /** @psalm-suppress InvalidOperand */
-            $file   = $now->format('Y-m-d\TH-i-s-u') . '_' . random_int(0, mt_getrandmax()) . '.html';
-            $output = fopen($file, 'a+b');
+            $file   = $now->format('Y-m-d\TH-i-s-u') . '_' . \random_int(0, \mt_getrandmax()) . '.html';
+            $output = \Safe\fopen($file, 'a+b');
         }
 
-        if (false === is_resource($output)) {
+        if (false === \is_resource($output)) {
             throw new \RuntimeException('Something went wrong creating the dump file.');
         }
 
