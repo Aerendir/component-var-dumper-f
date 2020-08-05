@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.3",
         "symfony/var-dumper": "^3.4|^4.4|^5.1",
         "thecodingmachine/safe": "^1.0"
     },
