@@ -44,6 +44,6 @@ if ( ! function_exists('ddf')) {
             VarDumperF::dump($var);
         }
 
-        die(1);
+        exit(1);
     }
 }
