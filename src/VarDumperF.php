@@ -3,13 +3,12 @@
 declare(strict_types=1);
 
 /*
- * This file is part of VarDumper CLI to HTML.
+ * This file is part of the Serendipity HQ VarDumper F Component.
  *
- * Copyright Adamo Aerendir Crespi 2020.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2020 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\VarDumperCliToHtml;
@@ -20,7 +19,7 @@ use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 /**
  * Creates the output in which the dump is then saved.
  */
-class VarDumperCliToHtml
+final class VarDumperF
 {
     /**
      * @param mixed $var
@@ -38,11 +37,11 @@ class VarDumperCliToHtml
         if (null === $output) {
             $now = new \DateTime();
             /** @psalm-suppress InvalidOperand */
-            $file   = $now->format('Y-m-d\TH-i-s-u') . '_' . random_int(0, mt_getrandmax()) . '.html';
-            $output = fopen($file, 'a+b');
+            $file   = $now->format('Y-m-d\TH-i-s-u') . '_' . \random_int(0, \mt_getrandmax()) . '.html';
+            $output = \Safe\fopen($file, 'a+b');
         }
 
-        if (false === is_resource($output)) {
+        if (false === \is_resource($output)) {
             throw new \RuntimeException('Something went wrong creating the dump file.');
         }
 

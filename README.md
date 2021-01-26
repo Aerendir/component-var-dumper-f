@@ -1,42 +1,53 @@
 <p align="center">
     <a href="http://www.serendipityhq.com" target="_blank">
-        <img src="http://www.serendipityhq.com/assets/open-source-projects/Logo-SerendipityHQ-Icon-Text-Purple.png">
+        <img style="max-width: 350px" src="http://www.serendipityhq.com/assets/open-source-projects/Logo-SerendipityHQ-Icon-Text-Purple.png">
     </a>
 </p>
 
-# VarDumper CLI to HTML
+<h1 align="center">Serendipity HQ VarDumper F</h1>
+<p align="center">Adds functions `dumpf()` and `ddf()` to [Symfony's VarDumper component](https://symfony.com/doc/current/components/var_dumper.html) that write the dump to a file.</p>
+<p align="center">
+    <a href="https://github.com/Aerendir/component-var-dumper-f/releases"><img src="https://img.shields.io/packagist/v/serendipity_hq/component-var-dumper-f.svg?style=flat-square"></a>
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
+    <a href="https://github.com/Aerendir/component-var-dumper-f/releases"><img src="https://img.shields.io/packagist/php-v/serendipity_hq/component-var-dumper-f?color=%238892BF&style=flat-square&logo=php" /></a>
+    <a title="Tested with Symfony ^3.4" href="https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev"><img title="Tested with Symfony ^3.4" src="https://img.shields.io/badge/Symfony-%5E3.4-333?style=flat-square&logo=symfony" /></a>
+    <a title="Tested with Symfony ^4.4" href="https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev"><img title="Tested with Symfony ^4.4" src="https://img.shields.io/badge/Symfony-%5E4.4-333?style=flat-square&logo=symfony" /></a>
+    <a title="Tested with Symfony ^5.2" href="https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev"><img title="Tested with Symfony ^5.2" src="https://img.shields.io/badge/Symfony-%5E5.2-333?style=flat-square&logo=symfony" /></a>
+</p>
 
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/serendipity_hq/vardumper-cli-to-html?color=%238892BF)](https://packagist.org/packages/serendipity_hq/vardumper-cli-to-html)
-[![Tested with Symfony ^3.4](https://img.shields.io/badge/Symfony-%5E3.4-333)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
-[![Tested with Symfony ^4.0](https://img.shields.io/badge/Symfony-%5E4.0-333)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
-[![Tested with Symfony ^5.0](https://img.shields.io/badge/Symfony-%5E5.0-333)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
+## Current Status
 
-[![Latest Stable Version](https://poser.pugx.org/serendipity_hq/vardumper-cli-to-html/v/stable.png)](https://packagist.org/packages/serendipity_hq/vardumper-cli-to-html)
-[![Total Downloads](https://poser.pugx.org/serendipity_hq/vardumper-cli-to-html/downloads.svg)](https://packagist.org/packages/serendipity_hq/vardumper-cli-to-html)
-[![License](https://poser.pugx.org/serendipity_hq/vardumper-cli-to-html/license.svg)](https://packagist.org/packages/serendipity_hq/vardumper-cli-to-html)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-var-dumper-f&metric=coverage)](https://sonarcloud.io/dashboard?id=Aerendir_component-var-dumper-f)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-var-dumper-f&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Aerendir_component-var-dumper-f)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-var-dumper-f&metric=alert_status)](https://sonarcloud.io/dashboard?id=Aerendir_component-var-dumper-f)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-var-dumper-f&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Aerendir_component-var-dumper-f)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-var-dumper-f&metric=security_rating)](https://sonarcloud.io/dashboard?id=Aerendir_component-var-dumper-f)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-var-dumper-f&metric=sqale_index)](https://sonarcloud.io/dashboard?id=Aerendir_component-var-dumper-f)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-var-dumper-f&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Aerendir_component-var-dumper-f)
 
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_vardumper-cli-to-html&metric=coverage)](https://sonarcloud.io/dashboard?id=Aerendir_vardumper-cli-to-html)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_vardumper-cli-to-html&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Aerendir_vardumper-cli-to-html)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_vardumper-cli-to-html&metric=alert_status)](https://sonarcloud.io/dashboard?id=Aerendir_vardumper-cli-to-html)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_vardumper-cli-to-html&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Aerendir_vardumper-cli-to-html)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_vardumper-cli-to-html&metric=security_rating)](https://sonarcloud.io/dashboard?id=Aerendir_vardumper-cli-to-html)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_vardumper-cli-to-html&metric=sqale_index)](https://sonarcloud.io/dashboard?id=Aerendir_vardumper-cli-to-html)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_vardumper-cli-to-html&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Aerendir_vardumper-cli-to-html)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/daa2a03b-444d-4ea6-8516-10e81c089b84/mini.png)](https://insight.sensiolabs.com/projects/daa2a03b-444d-4ea6-8516-10e81c089b84)
+[![Phan](https://github.com/Aerendir/component-var-dumper-f/workflows/Phan/badge.svg)](https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev)
+[![PHPStan](https://github.com/Aerendir/component-var-dumper-f/workflows/PHPStan/badge.svg)](https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev)
+[![PSalm](https://github.com/Aerendir/component-var-dumper-f/workflows/PSalm/badge.svg)](https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev)
+[![PHPUnit](https://github.com/Aerendir/component-var-dumper-f/workflows/PHPunit/badge.svg)](https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev)
+[![Composer](https://github.com/Aerendir/component-var-dumper-f/workflows/Composer/badge.svg)](https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev)
+[![PHP CS Fixer](https://github.com/Aerendir/component-var-dumper-f/workflows/PHP%20CS%20Fixer/badge.svg)](https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev)
+[![Rector](https://github.com/Aerendir/component-var-dumper-f/workflows/Rector/badge.svg)](https://github.com/Aerendir/component-var-dumper-f/actions?query=branch%3Adev)
 
-[![Phan](https://github.com/Aerendir/vardumper-cli-to-html/workflows/Phan/badge.svg)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
-[![PHPStan](https://github.com/Aerendir/vardumper-cli-to-html/workflows/PHPStan/badge.svg)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
-[![PSalm](https://github.com/Aerendir/vardumper-cli-to-html/workflows/PSalm/badge.svg)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
-[![PHPUnit](https://github.com/Aerendir/vardumper-cli-to-html/workflows/PHPunit/badge.svg)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
-[![Composer](https://github.com/Aerendir/vardumper-cli-to-html/workflows/Composer/badge.svg)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
-[![PHP CS Fixer](https://github.com/Aerendir/vardumper-cli-to-html/workflows/PHP%20CS%20Fixer/badge.svg)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
-[![Rector](https://github.com/Aerendir/vardumper-cli-to-html/workflows/Rector/badge.svg)](https://github.com/Aerendir/vardumper-cli-to-html/actions)
-
-Adds functions `dumpf()` and `ddf()` to [Symfony's VarDumper component](https://symfony.com/doc/current/components/var_dumper.html).
+<hr />
+<h3 align="center">
+    <b>Do you like this library?</b><br />
+    <b><a href="#js-repo-pjax-container">LEAVE A &#9733;</a></b>
+</h3>
+<p align="center">
+    or run<br />
+    <code>composer global require symfony/thanks && composer thanks</code><br />
+    to say thank you to all libraries you use in your current project, this included!
+</p>
+<hr />
 
 ## Install VarDumper CLI to HTML via Composer
 
-    $ composer require serendipity_hq/vardumper-cli-to-html --dev
+    $ composer require serendipity_hq/component-var-dumper-f --dev
 
 This library follows the http://semver.org/ versioning conventions.
 
@@ -106,3 +117,15 @@ So, if you call `dumpf()` three times in your CLI script, then the resulting fil
 If you run again the script, the resulting file dump will now contain six dumps in it: the three from the first run and the three from the second run.
 
 To get a fresh dump, simply remove the dumped files.
+
+<hr />
+<h3 align="center">
+    <b>Do you like this library?</b><br />
+    <b><a href="#js-repo-pjax-container">LEAVE A &#9733;</a></b>
+</h3>
+<p align="center">
+    or run<br />
+    <code>composer global require symfony/thanks && composer thanks</code><br />
+    to say thank you to all libraries you use in your current project, this included!
+</p>
+<hr />

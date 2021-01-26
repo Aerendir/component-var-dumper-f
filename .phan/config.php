@@ -6,7 +6,7 @@ declare(strict_types=1);
  * after this file is read.
  */
 return [
-    'target_php_version' => '7.2',
+    'target_php_version' => '7.3',
     'minimum_severity' => \Phan\Issue::SEVERITY_LOW,
 
     // A list of directories that should be parsed for class and
@@ -17,7 +17,10 @@ return [
     // Thus, both first-party and third-party code being used by
     // your application should be included in this list.
     'directory_list' => [
-        'src', 'vendor'
+        'src',
+        'tests',
+        'vendor',
+        'vendor-bin/phpunit/vendor'
     ],
 
     // A directory list that defines files that will be excluded
@@ -32,7 +35,8 @@ return [
     //       should be added to both the `directory_list`
     //       and `exclude_analysis_directory_list` arrays.
     'exclude_analysis_directory_list' => [
-        'vendor/', 'build/', 'docs/', 'tests/'
+        'vendor/',
+        'vendor-bin/phpunit/vendor',
     ],
 
     'quick_mode' => false,
@@ -55,4 +59,8 @@ return [
     // can't be removed for whatever reason.
     // (e.g. '@Test\.php$@', or '@vendor/.*/(tests|Tests)/@')
     'exclude_file_regex' => '@^vendor/.*/(tests?|Tests?|stubs?|Stubs?)/@',
+    'plugins' => [
+        'vendor-bin/phan/vendor/drenso/phan-extensions/Plugin/DocComment/InlineVarPlugin.php',
+        'vendor-bin/phan/vendor/drenso/phan-extensions/Plugin/DocComment/MethodPlugin.php'
+    ]
 ];

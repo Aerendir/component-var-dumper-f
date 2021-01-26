@@ -1,16 +1,15 @@
 <?php
 
 /*
- * This file is part of VarDumper CLI to HTML.
+ * This file is part of the Serendipity HQ VarDumper F Component.
  *
- * Copyright Adamo Aerendir Crespi 2020.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2020 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-use SerendipityHQ\Component\VarDumperCliToHtml\VarDumperCliToHtml;
+use SerendipityHQ\Component\VarDumperCliToHtml\VarDumperF;
 
 if ( ! function_exists('dumpf')) {
     /**
@@ -21,10 +20,10 @@ if ( ! function_exists('dumpf')) {
      */
     function dumpf($var, ...$moreVars)
     {
-        VarDumperCliToHtml::dump($var);
+        VarDumperF::dump($var);
 
         foreach ($moreVars as $v) {
-            VarDumperCliToHtml::dump($v);
+            VarDumperF::dump($v);
         }
 
         if (1 < func_num_args()) {
@@ -42,9 +41,9 @@ if ( ! function_exists('ddf')) {
     function ddf(...$vars): void
     {
         foreach ($vars as $var) {
-            VarDumperCliToHtml::dump($var);
+            VarDumperF::dump($var);
         }
 
-        die(1);
+        exit(1);
     }
 }
