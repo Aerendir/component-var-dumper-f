@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ VarDumper F Component.
  *
@@ -12,12 +14,6 @@
 use SerendipityHQ\Component\VarDumperCliToHtml\VarDumperF;
 
 if ( ! function_exists('dumpf')) {
-    /**
-     * @param mixed $var
-     * @param mixed ...$moreVars
-     *
-     * @return mixed
-     */
     function dumpf($var, ...$moreVars)
     {
         VarDumperF::dump($var);
@@ -35,9 +31,6 @@ if ( ! function_exists('dumpf')) {
 }
 
 if ( ! function_exists('ddf')) {
-    /**
-     * @param mixed ...$vars
-     */
     function ddf(...$vars): void
     {
         foreach ($vars as $var) {
