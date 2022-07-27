@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.19.0@a2ad69ae4f5ab1f7d225a8dc4e2ec2d9415ed599">
+<files psalm-version="4.24.0@06dd975cb55d36af80f242561738f16c5f58264f">
   <file src="src/VarDumperF.php">
     <ReservedWord occurrences="1">
       <code>mixed</code>
     </ReservedWord>
   </file>
   <file src="src/dump.php">
-    <MixedAssignment occurrences="2">
-      <code>$v</code>
+    <MissingParamType occurrences="3">
+      <code>$moreVars</code>
       <code>$var</code>
-    </MixedAssignment>
+      <code>$vars</code>
+    </MissingParamType>
+    <MissingReturnType occurrences="1">
+      <code>dumpf</code>
+    </MissingReturnType>
   </file>
 </files>

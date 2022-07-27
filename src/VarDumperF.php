@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace SerendipityHQ\Component\VarDumperCliToHtml;
 
-use function Safe\fopen;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\HtmlDumper;
+use function Safe\fopen;
 
 /**
  * Creates the output in which the dump is then saved.
