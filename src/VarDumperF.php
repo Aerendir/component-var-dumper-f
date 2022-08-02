@@ -16,14 +16,13 @@ namespace SerendipityHQ\Component\VarDumperCliToHtml;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 
+use function Safe\fopen;
+
 /**
  * Creates the output in which the dump is then saved.
  */
 final class VarDumperF
 {
-    /**
-     * @param mixed $var
-     */
     public static function dump(mixed $var): void
     {
         if (false === \in_array(\PHP_SAPI, ['cli', 'phpdbg'])) {
@@ -38,7 +37,7 @@ final class VarDumperF
             $now = new \DateTime();
             /** @psalm-suppress InvalidOperand */
             $file   = $now->format('Y-m-d\TH-i-s-u') . '_' . \random_int(0, \mt_getrandmax()) . '.html';
-            $output = \Safe\fopen($file, 'a+b');
+            $output = fopen($file, 'a+b');
         }
 
         if (false === \is_resource($output)) {

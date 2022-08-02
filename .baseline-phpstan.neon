@@ -5,3 +5,23 @@ parameters:
 			count: 1
 			path: src/VarDumperF.php
 
+		-
+			message: "#^Function ddf\\(\\) has parameter \\$vars with no type specified\\.$#"
+			count: 1
+			path: src/dump.php
+
+		-
+			message: "#^Function dumpf\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/dump.php
+
+		-
+			message: "#^Function dumpf\\(\\) has parameter \\$moreVars with no type specified\\.$#"
+			count: 1
+			path: src/dump.php
+
+		-
+			message: "#^Function dumpf\\(\\) has parameter \\$var with no type specified\\.$#"
+			count: 1
+			path: src/dump.php
+
