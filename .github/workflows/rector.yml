@@ -19,22 +19,26 @@ jobs:
 
         steps:
             -   name: Checkout
-                uses: actions/checkout@v4
+                uses: actions/checkout@v6
 
             -   name: Setup PHP
-                uses: shivammathur/setup-php@2.29.0
+                uses: shivammathur/setup-php@2.36.0
                 with:
                     php-version: ${{ matrix.php }}
                     coverage: none # disable xdebug, pcov
                     extensions: ast
 
+            -   name: Drop roave/security-advisories
+                # It conflicts with every PHP release older than 8.2.35, so no job of the matrix could install.
+                run: composer rem roave/security-advisories --dev --no-update
+
             -   name: Install Composer deps
-                uses: ramsey/composer-install@v2
+                uses: ramsey/composer-install@v3
                 with:
                     composer-options: --no-scripts
 
             -   name: Install Composer bin PHPUnit
-                uses: ramsey/composer-install@v2
+                uses: ramsey/composer-install@v3
                 with:
                     working-directory: './vendor-bin/phpunit'
 
