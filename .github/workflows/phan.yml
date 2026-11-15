@@ -21,6 +21,9 @@ jobs:
                 exclude:
                     - php: '7.4'
                       symfony: '~6.0'
+                    # symfony/var-dumper 6.4, the only 6.x the component accepts, requires PHP 8.1.
+                    - php: '8.0'
+                      symfony: '~6.0'
 
         steps:
             -   name: Checkout
@@ -32,6 +35,10 @@ jobs:
                     php-version: ${{ matrix.php }}
                     coverage: none # disable xdebug, pcov
                     extensions: ast
+
+            -   name: Drop roave/security-advisories
+                # It conflicts with every PHP release older than 8.2.35, so no job of the matrix could install.
+                run: composer rem roave/security-advisories --dev --no-update
 
             -   name: Fix Symfony version
                 run: |
