@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.0.0@4e177bf0c9f03c17d2fbfd83b7cc9c47605274d8">
-  <file src="src/VarDumperF.php">
-    <MissingDependency occurrences="1">
-      <code>HtmlDumper</code>
-    </MissingDependency>
-    <ReservedWord occurrences="1">
-      <code>mixed</code>
-    </ReservedWord>
-  </file>
+<files psalm-version="7.6.0@4303c7dbbc23efaac3d988707b4acf4d5508a9cc">
   <file src="src/dump.php">
-    <MissingParamType occurrences="3">
-      <code>$moreVars</code>
-      <code>$var</code>
-      <code>$vars</code>
+    <MissingParamType>
+      <code><![CDATA[$moreVars]]></code>
+      <code><![CDATA[$var]]></code>
+      <code><![CDATA[$vars]]></code>
     </MissingParamType>
-    <MissingReturnType occurrences="1">
-      <code>dumpf</code>
+    <MissingReturnType>
+      <code><![CDATA[dumpf]]></code>
     </MissingReturnType>
   </file>
 </files>

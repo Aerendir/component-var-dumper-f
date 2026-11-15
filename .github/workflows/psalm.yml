@@ -15,30 +15,19 @@ jobs:
             fail-fast: false
             matrix:
                 os: [ ubuntu-latest ]
-                php: [ '7.4', '8.0', '8.1' ]
-                symfony: [ '~4.4', '~5.4', '~6.0' ]
-
-                exclude:
-                    - php: '7.4'
-                      symfony: '~6.0'
-                    # symfony/var-dumper 6.4, the only 6.x the component accepts, requires PHP 8.1.
-                    - php: '8.0'
-                      symfony: '~6.0'
+                php: [ '8.2' ]
+                symfony: [ '~6.4' ]
 
         steps:
             -   name: Checkout
-                uses: actions/checkout@v6
+                uses: actions/checkout@v7
 
             -   name: Setup PHP
-                uses: shivammathur/setup-php@2.36.0
+                uses: shivammathur/setup-php@2.40.0
                 with:
                     php-version: ${{ matrix.php }}
                     coverage: none # disable xdebug, pcov
                     extensions: ast
-
-            -   name: Drop roave/security-advisories
-                # It conflicts with every PHP release older than 8.2.35, so no job of the matrix could install.
-                run: composer rem roave/security-advisories --dev --no-update
 
             -   name: Fix Symfony version
                 run: |
@@ -51,7 +40,7 @@ jobs:
                     composer rem rector/rector --dev --no-update
 
             -   name: Install Composer deps
-                uses: ramsey/composer-install@v3
+                uses: ramsey/composer-install@v4
                 with:
                     composer-options: --no-scripts
 
@@ -61,7 +50,7 @@ jobs:
                     composer update --no-interaction --no-scripts
 
             -   name: Install Composer bin PHPUnit
-                uses: ramsey/composer-install@v3
+                uses: ramsey/composer-install@v4
                 with:
                     working-directory: './vendor-bin/phpunit'
 

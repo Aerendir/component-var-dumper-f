@@ -23,7 +23,7 @@ final class VarDumperF
 {
     public static function dump(mixed $var): void
     {
-        if (false === \in_array(\PHP_SAPI, ['cli', 'phpdbg'])) {
+        if (false === \in_array(\PHP_SAPI, ['cli', 'phpdbg'], true)) {
             throw new \LogicException('You can use DumperCliToHtml only from the command line.');
         }
 
