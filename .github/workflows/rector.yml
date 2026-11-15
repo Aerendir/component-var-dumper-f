@@ -28,6 +28,10 @@ jobs:
                     coverage: none # disable xdebug, pcov
                     extensions: ast
 
+            -   name: Drop roave/security-advisories
+                # It conflicts with every PHP release older than 8.2.35, so no job of the matrix could install.
+                run: composer rem roave/security-advisories --dev --no-update
+
             -   name: Install Composer deps
                 uses: ramsey/composer-install@v3
                 with:

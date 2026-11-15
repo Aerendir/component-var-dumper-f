@@ -34,6 +34,10 @@ jobs:
                     coverage: pcov
                     extensions: ast
 
+            -   name: Drop roave/security-advisories
+                # It conflicts with every PHP release older than 8.2.35, so no job of the matrix could install.
+                run: composer rem roave/security-advisories --dev --no-update
+
             -   name: Get Composer Cache Directory
                 id: composer-cache
                 run: |
